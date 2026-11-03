@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "ComicSans";
+  src: url("../Fontes/COMIC.woff2");
+}
+
+.hashtm {
+    text-align: center;
+    color: white;
+    font-family: "ComicSans";
+    font-size: 100px;
+    mix-blend-mode: overlay;
+}
+
+body {
+    background-image: url("../Imagens/kurisu\ deitada\ dino.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Container for sections */
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* Forces snapping */
+}
+
+/* Individual sections */
+.section {
+  height: 100vh;
+  scroll-snap-align: start; /* Aligns top of section to top of viewport */
+}
