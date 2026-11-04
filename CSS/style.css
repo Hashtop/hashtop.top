@@ -3,30 +3,50 @@
   src: url("../Fontes/COMIC.woff2");
 }
 
+@keyframes hashsobe {
+  0% {top: -20rem; margin-bottom: 20rem;}
+  100% {top: 0rem; margin-bottom: 0rem;}
+}
+
 .hashtm {
-    text-align: center;
-    color: white;
-    font-family: "ComicSans";
-    font-size: 100px;
-    mix-blend-mode: overlay;
+  color: white;
+  font-family: "ComicSans";
+  font-size: 3vh;
+  mix-blend-mode: overlay;
+  position: relative;
+
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  display: flex;
+
+  animation: hashsobe 2s cubic-bezier(0, 1, 0, 1) forwards;
+}
+
+@keyframes parallax {
+  from {
+    background-position: 40% -40vh; /*top -20rem center*/
+  }
+  to {
+    background-position: 40% 0vh; /*top 0rem center*/
+  }
 }
 
 body {
-    background-image: url("../Imagens/kurisu\ deitada\ dino.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url("../Imagens/kurisu\ deitada\ dino.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: parallax linear;
+  animation-timeline: scroll();
 }
 
-/* Container for sections */
-.scroll-container {
+section.links {
   height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; /* Forces snapping */
-}
-
-/* Individual sections */
-.section {
-  height: 100vh;
-  scroll-snap-align: start; /* Aligns top of section to top of viewport */
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  display: flex;
 }
