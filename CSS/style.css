@@ -51,8 +51,10 @@ section.links {
   display: flex;
 }
 
-table {
+.tableresponsivo {
+  display: table;
   border-spacing: 4vw;
+  
   text-align: center;
   mix-blend-mode: overlay;
   font-family: "ComicSans";
@@ -64,9 +66,28 @@ table {
   100% {filter: drop-shadow(0 0 0.5vw white);}
 }
 
-td {
+.trresponsivo {
+  display: table-row;
+}
+
+.tdresponsivo {
+  display: table-cell;
   padding: 2vw;
   border: 1vw dashed white;
   
   animation: glowanim 2s linear infinite alternate;
+}
+
+@media (max-width: 768px) or (orientation: portrait) {
+  .tableresponsivo {
+    font-size: 10vw;
+  }
+  .trresponsivo {
+    display: block;
+    float: left;
+  }
+  .tdresponsivo {
+    display: block;
+    margin-bottom: 4vh;
+  }
 }
