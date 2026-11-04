@@ -28,18 +28,19 @@
 
 @keyframes parallax {
   from {
-    background-position: 40% -40vh; /*top -20rem center*/
+    background-position: 50% -40vh;
   }
   to {
-    background-position: 40% 0vh; /*top 0rem center*/
+    background-position: 50% 0vh;
   }
 }
 
 body {
   background-image: url("../Imagens/kurisu\ deitada\ dino.webp");
-  background-size: cover;
+  background-size: 200vh;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 
   animation: parallax linear;
   animation-timeline: scroll();
