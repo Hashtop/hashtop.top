@@ -98,7 +98,7 @@ section.links {
   cursor: pointer;
 }
 
-@media (max-width: 768px) and (orientation: portrait) {
+@media (max-width: 768px) or (orientation: portrait) {
   .tableresponsivo {
     font-size: 10vw;
   }
