@@ -4,7 +4,7 @@
 }
 
 @keyframes hashsobe {
-  0% {top: -20rem; margin-bottom: 20rem;}
+  0% {top: -20rem; margin-bottom: 40rem;}
   100% {top: 0rem; margin-bottom: 0rem;}
 }
 
@@ -49,4 +49,24 @@ section.links {
   align-items: center;
   margin: 0;
   display: flex;
+}
+
+table {
+  border-spacing: 4vw;
+  text-align: center;
+  mix-blend-mode: overlay;
+  font-family: "ComicSans";
+  font-size: 5vw;
+}
+
+@keyframes glowanim {
+  0% {filter: drop-shadow(0 0 0.2vw white);}
+  100% {filter: drop-shadow(0 0 0.5vw white);}
+}
+
+td {
+  padding: 2vw;
+  border: 1vw dashed white;
+  
+  animation: glowanim 2s linear infinite alternate;
 }
