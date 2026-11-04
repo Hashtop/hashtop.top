@@ -9,6 +9,8 @@
 }
 
 .hashtm {
+  pointer-events: none;
+
   color: white;
   font-family: "ComicSans";
   font-size: 3vh;
@@ -73,12 +75,29 @@ section.links {
 .tdresponsivo {
   display: table-cell;
   padding: 2vw;
-  border: 1vw dashed white;
+
+  /*Borda*/
+  --dashComp: 50px;
+  --dashLarg: 8px;
+
+  background: linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%);
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: var(--dashComp) var(--dashLarg), var(--dashComp) var(--dashLarg), var(--dashLarg) var(--dashComp), var(--dashLarg) var(--dashComp);
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  transition: background-position 2s ease-out;
   
   animation: glowanim 2s linear infinite alternate;
 }
 
-@media (max-width: 768px) or (orientation: portrait) {
+.tdresponsivo:hover {
+  --linhaMove: 100%;
+  --linhaMoveNeg: -100%;
+
+  background-position: var(--linhaMove) 0, var(--linhaMoveNeg) 100%, 0 var(--linhaMoveNeg), 100% var(--linhaMove);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) and (not (orientation: landscape)) {
   .tableresponsivo {
     font-size: 10vw;
   }
@@ -90,4 +109,15 @@ section.links {
     display: block;
     margin-bottom: 4vh;
   }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+  transition: color 1s ease-out;
+}
+
+a:hover {
+  color: rgb(70, 249, 255);
 }
