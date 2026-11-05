@@ -15,7 +15,7 @@
   100% {top: 0vh; margin-bottom: 0vh; transform: scale(1);}
 }
 
-.hashtm {
+section.hashtm {
   pointer-events: none;
 
   color: white;
@@ -53,7 +53,7 @@ body {
   animation-timeline: scroll();
 }
 
-section.links {
+nav.links {
   height: 100vh;
   justify-content: center;
   align-items: center;
