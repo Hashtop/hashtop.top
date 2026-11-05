@@ -3,9 +3,16 @@
   src: url("../Fontes/COMIC.woff2");
 }
 
+:root {
+  --cor-fundo: #36005f;
+  --cor-fundo-select: #af6eef;
+  --cor-link: #4449a8;
+  --cor-glow: #cd8cff;
+}
+
 @keyframes hashsobe {
-  0% {top: -20rem; margin-bottom: 40rem;}
-  100% {top: 0rem; margin-bottom: 0rem;}
+  0% {top: -40vh; margin-bottom: 40vh; transform: scale(2);}
+  100% {top: 0vh; margin-bottom: 0vh; transform: scale(1);}
 }
 
 .hashtm {
@@ -28,7 +35,7 @@
 
 @keyframes parallax {
   from {
-    background-position: 50% -40vh;
+    background-position: 50% -80vh;
   }
   to {
     background-position: 50% 0vh;
@@ -36,7 +43,7 @@
 }
 
 body {
-  background-image: url("../Imagens/kurisu\ deitada\ dino.webp");
+  background-image: url("../Imagens/com-hash.webp");
   background-size: 200vh;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,8 +72,8 @@ section.links {
 }
 
 @keyframes glowanim {
-  0% {filter: drop-shadow(0 0 0.2vw white);}
-  100% {filter: drop-shadow(0 0 0.5vw white);}
+  0% {filter: drop-shadow(0 0 .2vw var(--cor-glow));}
+  100% {filter: drop-shadow(0 0 .5vw var(--cor-glow));}
 }
 
 .trresponsivo {
@@ -85,8 +92,10 @@ section.links {
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: var(--dashComp) var(--dashLarg), var(--dashComp) var(--dashLarg), var(--dashLarg) var(--dashComp), var(--dashLarg) var(--dashComp);
   background-position: 0 0, 0 100%, 0 0, 100% 0;
-  transition: background-position 2s ease-out;
-  
+
+  text-shadow: 4px 4px var(--cor-fundo);
+
+  transition: background-position 2s ease-out, background-color 1s ease-out, text-shadow 1.5s ease-out;
   animation: glowanim 2s linear infinite alternate;
 }
 
@@ -96,6 +105,8 @@ section.links {
 
   background-position: var(--linhaMove) 0, var(--linhaMoveNeg) 100%, 0 var(--linhaMoveNeg), 100% var(--linhaMove);
   cursor: pointer;
+  background-color: #ffe100;
+  text-shadow: var(--cor-fundo-select);
 }
 
 @media (max-width: 768px) or (orientation: portrait) {
@@ -120,5 +131,5 @@ a {
 }
 
 a:hover {
-  color: rgb(70, 249, 255);
+  color: var(--cor-link);
 }
