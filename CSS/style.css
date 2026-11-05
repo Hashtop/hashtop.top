@@ -8,6 +8,10 @@
   --cor-fundo-select: #af6eef;
   --cor-link: #4449a8;
   --cor-glow: #cd8cff;
+
+  /*Bordas na horizontal*/
+  --dashComp: 3vw;
+  --dashLarg: .6vw;
 }
 
 @keyframes hashsobe {
@@ -45,7 +49,7 @@ section.hashtm {
 body {
   background-image: url("../Imagens/com-hash.webp");
   background-size: 200vh;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
 
@@ -84,16 +88,12 @@ nav.links {
   display: table-cell;
   padding: 2vw;
 
-  /*Borda*/
-  --dashComp: 50px;
-  --dashLarg: 8px;
-
   background: linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%);
   background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
   background-size: var(--dashComp) var(--dashLarg), var(--dashComp) var(--dashLarg), var(--dashLarg) var(--dashComp), var(--dashLarg) var(--dashComp);
   background-position: 0 0, 0 100%, 0 0, 100% 0;
 
-  text-shadow: 4px 4px var(--cor-fundo);
+  text-shadow: .2vw .5vh var(--cor-fundo);
 
   transition: background-position 2s ease-out, background-color 1s ease-out, text-shadow 1.5s ease-out;
   animation: glowanim 2s linear infinite alternate;
@@ -109,19 +109,6 @@ nav.links {
   text-shadow: var(--cor-fundo-select);
 }
 
-@media (max-width: 768px) or (orientation: portrait) {
-  .tableresponsivo {
-    font-size: 10vw;
-  }
-  .trresponsivo {
-    display: block;
-    float: left;
-  }
-  .tdresponsivo {
-    display: block;
-    margin-bottom: 4vh;
-  }
-}
 
 a {
   color: white;
@@ -132,4 +119,26 @@ a {
 
 a:hover {
   color: var(--cor-link);
+}
+
+@media ((max-width: 768px) or (orientation: portrait)) and (not (orientation: landscape)) {
+  :root {
+    /*Bordas na vertical*/
+    --dashComp: 3vh;
+    --dashLarg: .6vh;
+  }
+  
+  .tableresponsivo {
+    font-size: 10vw;
+  }
+  .trresponsivo {
+    display: block;
+    float: left;
+  }
+  .tdresponsivo {
+    display: block;
+    margin-bottom: 4vh;
+
+    text-shadow: .2vh .5vw var(--cor-fundo);
+  }
 }
